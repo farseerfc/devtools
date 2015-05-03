@@ -69,13 +69,13 @@ cleanup() {
 }
 
 abort() {
-	error 'Aborting...'
+	error "Aborting from $1"
 	cleanup 255
 }
 
 trap_abort() {
 	trap - EXIT INT QUIT TERM HUP
-	abort
+	abort 'trap'
 }
 
 trap_exit() {
