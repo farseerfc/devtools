@@ -380,7 +380,7 @@ create_chroot
 
 $update_first && arch-nspawn "$copydir" \
 		"${bindmounts_ro[@]}" "${bindmounts_rw[@]}" \
-		pacman -Syu --noconfirm
+		pacman -Syu --noconfirm --debug
 
 [[ -n ${install_pkgs[*]} ]] && install_packages
 
