@@ -205,7 +205,7 @@ prepare_chroot() {
 	if [[ ! -f $copydir/etc/sudoers.d/builduser-pacman ]]; then
 		cat > "$copydir/etc/sudoers.d/builduser-pacman" <<EOF
 Defaults env_keep += "HOME"
-builduser ALL = NOPASSWD: /usr/bin/pacman /usr/bin/pacman-lilac /pacman-lilac
+builduser ALL = NOPASSWD: /usr/bin/pacman /usr/bin/pacman-lilac /pacman-lilac /usr/bin/env
 EOF
 		chmod 440 "$copydir/etc/sudoers.d/builduser-pacman"
 	fi
