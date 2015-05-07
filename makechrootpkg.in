@@ -12,6 +12,8 @@ m4_include(lib/common.sh)
 
 shopt -s nullglob
 
+PACMAN="pacman --debug"
+
 makepkg_args=(-s --noconfirm -L --holdver)
 repack=false
 update_first=false
