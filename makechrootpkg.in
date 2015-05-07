@@ -289,7 +289,7 @@ _chrootbuild() {
 		exit 1
 	fi
 
-	sudo -u builduser env PACMAN="pacman --debug" makepkg "$@"
+	sudo -u builduser makepkg "$@"
 }
 
 move_products() {
