@@ -135,7 +135,7 @@ install_packages() {
 
 		arch-nspawn "$copydir" \
 			"${bindmounts_ro[@]}" "${bindmounts_rw[@]}" \
-			pacman -U /$pkgname --noconfirm
+			pacman -U /$pkgname --noconfirm --debug
 		(( ret += !! $? ))
 
 		rm "$copydir/$pkgname"
