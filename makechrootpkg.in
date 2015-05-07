@@ -289,7 +289,7 @@ _chrootbuild() {
 		exit 1
 	fi
 
-	sudo -u builduser makepkg "$@"
+	sudo -u builduser env PACMAN=pacman-lilac makepkg "$@"
 }
 
 move_products() {

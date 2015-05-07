@@ -16,6 +16,7 @@ BINPROGS = \
 	crossrepomove\
 	arch-nspawn \
 	mkarchroot \
+	pacman-lilac \
 	makechrootpkg
 
 CONFIGFILES = \
