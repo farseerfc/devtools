@@ -230,8 +230,7 @@ EOF
 		fi
 	} >"$copydir/chrootbuild"
 	chmod +x "$copydir/chrootbuild"
-
-    cp `which pacman-lilac` "$copydir/pacman-lilac"
+    cp /usr/bin/pacman-lilac "$copydir/pacman-lilac"
 }
 
 download_sources() {
