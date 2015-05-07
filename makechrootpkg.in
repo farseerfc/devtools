@@ -12,8 +12,6 @@ m4_include(lib/common.sh)
 
 shopt -s nullglob
 
-PACMAN="pacman --debug"
-
 makepkg_args=(-s --noconfirm -L --holdver)
 repack=false
 update_first=false
@@ -291,7 +289,7 @@ _chrootbuild() {
 		exit 1
 	fi
 
-	sudo -u builduser env PACMAN=$PACMAN makepkg "$@"
+	sudo -u builduser env PACMAN="pacman --debug" makepkg "$@"
 }
 
 move_products() {
