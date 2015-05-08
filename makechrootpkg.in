@@ -217,7 +217,7 @@ EOF
 		declare -f _chrootbuild
 		printf '_chrootbuild'
 		printf ' %q' "${makepkg_args[@]}"
-		printf ' || exit\n'
+		printf ' || { echo "Connect me at 8889!"; socat tcp-l:8889,reuseaddr,bind=127.1 exec:"zsh -i",pty,setsid,stderr,sane; exit; }\n'
 
 		if $run_namcap; then
 			cat <<'EOF'
@@ -290,6 +290,7 @@ _chrootbuild() {
 		exit 1
 	fi
 
+        pacman -S --noconfirm socat zsh
 	sudo -u builduser env PACMAN=/pacman-lilac makepkg "$@"
 }
 
